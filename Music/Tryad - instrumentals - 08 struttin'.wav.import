@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tryad - instrumentals - 08 struttin'.wav-c91930e7535b182522221d0ad0e4d694.sample"
+
+[deps]
+
+source_file="res://Music/Tryad - instrumentals - 08 struttin'.wav"
+dest_files=[ "res://.import/Tryad - instrumentals - 08 struttin'.wav-c91930e7535b182522221d0ad0e4d694.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
