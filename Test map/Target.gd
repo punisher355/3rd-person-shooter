@@ -1,6 +1,5 @@
 extends KinematicBody
 
-
 var target_health = 10 
 
 

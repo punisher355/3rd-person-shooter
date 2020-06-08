@@ -4,14 +4,16 @@
 [ext_resource path="res://Player/HUD/HUD.gd" type="Script" id=2]
 
 [node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1028.0
-margin_bottom = 577.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -19,21 +21,21 @@ __meta__ = {
 }
 
 [node name="left_hud" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 512.0
-margin_bottom = 577.0
+margin_right = 510.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/left_hud"]
-margin_right = 512.0
-margin_bottom = 552.0
+margin_right = 510.0
+margin_bottom = 551.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Health" type="Label" parent="HBoxContainer/left_hud"]
-margin_top = 556.0
-margin_right = 512.0
-margin_bottom = 577.0
+margin_top = 555.0
+margin_right = 510.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
@@ -44,35 +46,35 @@ __meta__ = {
 }
 
 [node name="right_hud" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 516.0
-margin_right = 1028.0
-margin_bottom = 577.0
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/right_hud"]
-margin_right = 254.0
-margin_bottom = 577.0
+margin_right = 253.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/right_hud"]
-margin_left = 258.0
-margin_right = 512.0
-margin_bottom = 577.0
+margin_left = 257.0
+margin_right = 510.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/right_hud/VBoxContainer2"]
-margin_right = 254.0
-margin_bottom = 502.0
+margin_right = 253.0
+margin_bottom = 501.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="primary_ammo" type="Label" parent="HBoxContainer/right_hud/VBoxContainer2"]
-margin_top = 506.0
-margin_right = 254.0
-margin_bottom = 527.0
+margin_top = 505.0
+margin_right = 253.0
+margin_bottom = 526.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
@@ -83,9 +85,9 @@ __meta__ = {
 }
 
 [node name="secondary_ammo" type="Label" parent="HBoxContainer/right_hud/VBoxContainer2"]
-margin_top = 531.0
-margin_right = 254.0
-margin_bottom = 552.0
+margin_top = 530.0
+margin_right = 253.0
+margin_bottom = 551.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )
@@ -96,9 +98,9 @@ __meta__ = {
 }
 
 [node name="shoulder_ammo" type="Label" parent="HBoxContainer/right_hud/VBoxContainer2"]
-margin_top = 556.0
-margin_right = 254.0
-margin_bottom = 577.0
+margin_top = 555.0
+margin_right = 253.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 1 )

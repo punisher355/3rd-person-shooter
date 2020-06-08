@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/human.dae" type="PackedScene" id=2]
 [ext_resource path="res://Player/HUD/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/menu/game_menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game map/crosshair_15.png" type="Texture" id=5]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -31,9 +33,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 
 [node name="Camera" type="Camera" parent="Boddy/Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+cull_mask = 1048573
+current = true
 
 [node name="right_hand" type="Position3D" parent="Boddy"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99988, 0.515831, -0.00951919 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Boddy"]
+transform = Transform( -20, 0, 6.51682e-06, 0, 1, 0, -6.51682e-06, 0, -20, 0, 6.7625, 0 )
+layers = 2
+axis = 1
+texture = ExtResource( 5 )
 
 [node name="Lock_on_Radius" type="Area" parent="."]
 collision_layer = 0
@@ -53,3 +63,6 @@ material/0 = SubResource( 4 )
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="game_menu" parent="." instance=ExtResource( 4 )]
+visible = false

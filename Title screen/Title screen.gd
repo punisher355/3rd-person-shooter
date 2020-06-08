@@ -1,6 +1,6 @@
 extends Control
 
-var options_visable = 1
+var options_visable = false
 
 # newgame button
 func _on_New_Game_pressed():
@@ -12,12 +12,12 @@ func _on_Load_Game_pressed():
 
 #option button
 func _on_Options_pressed():
-	if options_visable > 0:
-		get_node("Options").show()
-		options_visable -= 1
+	if options_visable == false:
+		get_node("VBoxContainer/Options").show()
+		options_visable = !options_visable
 	else:
-		get_node("Options").hide()
-		options_visable += 1
+		get_node("VBoxContainer/Options").hide()
+		options_visable = !options_visable
 
 #close game button
 func _on_Close_Game_pressed():

@@ -11,26 +11,26 @@ func _ready():
 # displays the mouse inverson and window settings
 func _process(_delta):
 	if Global.window == true:
-		$Window.text = "WINDOWED"
+		$Window/window.text = "WINDOWED BORDERLESS"
 	elif Global.window == false:
-		$Window.text = "WINDOWED BORDERLESS"
+		$Window/window.text = "WINDOWED"
 
 	if Global.mouse_inversion == true:
-		$Inverted_Mouse.text = "INVERTED Y"
+		$Inverted_Mouse/inverted_mouse.text = "INVERTED Y"
 	elif Global.mouse_inversion == false:
-		$Inverted_Mouse.text = "NORMAL"
+		$Inverted_Mouse/inverted_mouse.text = "NORMAL"
 
-	$Volume.value = Global.volume
-	$Mouse_sensitivity.value = Global.mouse_sensitivity * 10
+	$Volume/volume.value = Global.volume
+	$Mouse_Sensitivity/mouse_sensitivity.value = Global.mouse_sensitivity * 10
 	#print(OS.get_window_size())
-	$resolution.select(RESOLUTION_SETTINGS.find(OS.get_window_size()))
+	$Resolution/resolution.select(RESOLUTION_SETTINGS.find(OS.get_window_size()))
 	
 	
 func add_items():
 	# adds the resolutions to the resolution select
 	for x in RESOLUTION_SETTINGS.size():
 		var v = RESOLUTION_SETTINGS[x]
-		$resolution.add_item(str(v.x) + " x " + str(v.y), x)
+		$Resolution/resolution.add_item(str(v.x) + " x " + str(v.y), x)
 
 #applies the selected resolution to the game
 func _on_resolution_item_selected(id):

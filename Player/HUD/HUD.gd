@@ -11,3 +11,5 @@ func _process(_delta):
 	$HBoxContainer/right_hud/VBoxContainer2/primary_ammo.text = "primary weapon ammo:" + str(primary_ammo)
 	$HBoxContainer/right_hud/VBoxContainer2/secondary_ammo.text = "secondary weapon ammo:" + str(secondary_ammo)
 	$HBoxContainer/right_hud/VBoxContainer2/shoulder_ammo.text = "shoulder weapon ammo:" + str(shoulder_ammo)
+
+

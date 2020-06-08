@@ -34,10 +34,11 @@ func _physics_process(_delta):
 	
 	velocityg.y -= gravity
 	
-	if Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocityg.y = jump_hight
 	
 	Movement = Movement.normalized()
+
 	
 	if Movement != Vector3.ZERO:
 		velocity = velocity.move_toward(Movement * MAX_SPEED, ACCELERATION) 
@@ -65,16 +66,22 @@ func _input(event):
 				camera_angle += change
 
 func _process(_delta):
+	#checks if varables change
+	mouse_sensitivity = Global.mouse_sensitivity
+	mouse_inversion = Global.mouse_inversion
+	
 	# Lock on function
 	if Input.is_action_pressed("Target"):
 		pass
 		
-#count up towards next shot
+	#count up towards next shot
 	Primary_rof += 1
 		
-# Shooting function
+	# Shooting function
 	if Input.is_action_pressed("fire") and Primary_rof >= 40:#make changable for driffrent gear
 		Primary_rof = 0
 		var priamry = Primary.instance()
 		priamry.start($Boddy/right_hand.global_transform)
 		get_parent() .add_child(priamry)
+		
+

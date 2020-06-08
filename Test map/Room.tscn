@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game map/Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Test map/Room.gd" type="Script" id=3]
 [ext_resource path="res://Test map/Target.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game map/map.png" type="Texture" id=5]
 [ext_resource path="res://Music/Tryad - instrumentals - 08 struttin'.wav" type="AudioStream" id=6]
 [ext_resource path="res://Music/AudioStreamPlayer.gd" type="Script" id=7]
 
@@ -10,18 +12,22 @@
 extents = Vector3( 0.4981, 1, 0.4988 )
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.101961, 0.12549, 0.701961, 1 )
+albedo_color = Color( 0.0313726, 0.0509804, 0.541176, 1 )
 
 [sub_resource type="CubeMesh" id=3]
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="SphereShape" id=4]
+
+[sub_resource type="SphereMesh" id=5]
+
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.500341, 1, 0.500836 )
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=7]
 size = Vector3( 100, 0.1, 100 )
 
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.0313726, 0.0509804, 0.541176, 1 )
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.109804, 0.396078, 0.0313726, 1 )
 
 [node name="Room" type="Spatial"]
 script = ExtResource( 3 )
@@ -39,12 +45,13 @@ transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 19.635, 1, -8.772 )
 transform = Transform( 1, 0, 0, 0, 0.633313, 0.773896, 0, -0.773896, 0.633313, 0, 45.8473, 75.9024 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 6 )
 autoplay = true
 script = ExtResource( 7 )
 
 [node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.376, 1, -7.327 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="Block wall" type="StaticBody" parent="Spatial"]
 __meta__ = {
@@ -59,6 +66,23 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 10, -0.273614, 0, 0 )
 material_override = SubResource( 2 )
 mesh = SubResource( 3 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="ramp 1" type="StaticBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6665, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ramp 1"]
+transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/ramp 1"]
+transform = Transform( 5, 0, 0, 0, 10, 0, 0, 0, 5, -0.273615, 0, 0 )
+material_override = SubResource( 2 )
+mesh = SubResource( 5 )
 skeleton = NodePath("")
 material/0 = null
 
@@ -135,9 +159,17 @@ transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, -1.06801, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Spatial/Floor"]
 transform = Transform( 100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Spatial/Floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0852995, 0, -0.0375328 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="Map" parent="." instance=ExtResource( 2 )]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 21, 0, 0, 0, 1, 0, 0, 0, 21, 0, -1, 0 )
+layers = 2
+axis = 1
+texture = ExtResource( 5 )

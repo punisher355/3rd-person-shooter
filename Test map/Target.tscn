@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Test map/Target.gd" type="Script" id=1]
+[ext_resource path="res://Game map/crosshair_8.png" type="Texture" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 
@@ -26,3 +27,9 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 6.4195, 0 )
+layers = 2
+axis = 1
+texture = ExtResource( 2 )
