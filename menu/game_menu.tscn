@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/BO1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://menu/Options.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/Quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game map/Map.tscn" type="PackedScene" id=4]
+[ext_resource path="res://menu/game_menu.gd" type="Script" id=5]
+
+[node name="game_menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top border " type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 65.0
+text = "
+
+
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 69.0
+margin_right = 1024.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 9
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_right = 142.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="equipment" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 146.0
+margin_right = 288.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+text = "EQUIPMENT"
+
+[node name="items" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 292.0
+margin_right = 434.0
+margin_bottom = 27.0
+rect_pivot_offset = Vector2( -519.795, 90.4302 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+text = "ITEMS"
+
+[node name="map" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 438.0
+margin_right = 580.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+text = "MAP"
+
+[node name="options" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 584.0
+margin_right = 726.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+text = "OPTIONS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 730.0
+margin_right = 872.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+text = "QUIT"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 876.0
+margin_right = 1024.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="mid border" type="Label" parent="VBoxContainer"]
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 131.0
+text = "
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 135.0
+margin_right = 1024.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Map" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 441.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Options" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 2 )]
+pause_mode = 2
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 338.0
+margin_bottom = 441.0
+
+[node name="Quit" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 3 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 510.0
+margin_bottom = 441.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/equipment" to="." method="_on_equipment_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/quit" to="." method="_on_quit_pressed"]

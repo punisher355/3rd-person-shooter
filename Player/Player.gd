@@ -85,8 +85,6 @@ func _process(_delta):
 		get_parent() .add_child(priamry)
 		
 
-
-
 func _on_Lock_on_Radius_body_entered(body):
 	if body. is_in_group("Wall"):
 		body.OnHit()

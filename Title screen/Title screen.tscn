@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Title screen/Title screen.gd" type="Script" id=1]
 [ext_resource path="res://Resources/BO1.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Title screen/Options.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menu/Options.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Music/Tryad - instrumentals - 10 alone.wav" type="AudioStream" id=4]
 [ext_resource path="res://Music/AudioStreamPlayer.gd" type="Script" id=5]
 

@@ -1,11 +1,12 @@
 extends Control
 
-onready var Target_XZ = get_parent().get_node("Player")
-onready var Target_Y = get_parent().get_node("Spatial")
+var map_size:Vector2
+var border_size = self.get_size()
 
-onready var cam = get_node("ViewportContainer/Viewport/Camera")
-
-func _physics_process(delta):
-	cam.translation.x = Target_XZ.get_global_transform().origin.x
-	cam.translation.z = Target_XZ.get_global_transform().origin.z
-	cam.translation.y = Target_Y.get_global_transform().origin.y + 40
+func _process(_delta):
+	#map_size.x = (border_size.x - 44)
+	#map_size.y = (border_size.y - 40)
+	map_size.x = 972
+	map_size.y = 532
+	$ViewportContainer.set_size(map_size)
+	$ViewportContainer/Viewport.set_size(map_size)

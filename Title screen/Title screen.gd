@@ -2,6 +2,10 @@ extends Control
 
 var options_visable = false
 
+func _ready():
+	#update with loaded values when load system works
+	Global.resolution = OS.get_window_size()
+
 # newgame button
 func _on_New_Game_pressed():
 	get_tree().change_scene("res://Test map/Room.tscn")
