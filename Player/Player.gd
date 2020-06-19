@@ -45,9 +45,12 @@ func _physics_process(_delta):
 	else:
 		velocity = velocity.move_toward(Vector3.ZERO ,FRICTION)
 
-	#moving and gavity 
+	#moving and gravity 
+# warning-ignore:return_value_discarded
 	move_and_collide(velocity)
 	velocityg = move_and_slide(velocityg,Vector3(0, 1, 0))
+	if(is_on_floor() == true) and (get_floor_normal().y == 1):
+		velocityg = Vector3.ZERO
 
 #Camera function
 func _input(event): 
