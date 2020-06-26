@@ -1,7 +1,7 @@
 extends Control
 
 var map_size:Vector2
-var border_size = self.get_size()
+#var border_size = get_viewport().get_rect().size
 
 func _process(_delta):
 	#map_size.x = (border_size.x - 44)
