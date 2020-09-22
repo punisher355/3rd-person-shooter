@@ -1,11 +1,15 @@
 extends KinematicBody
 
 #Movement varables
-var gravity =  Vector3.DOWN * .8
-var jump_speed = 25
-var speed = 18
+const acceleration  = 1
+const max_speed = 25
 var velocity = Vector3()
-var jump = false 
+var Movement = Vector3()
+
+#gravity variables
+var gravity = .8
+var jump_hight = 25
+
 #anamation variables
 onready var anim = get_node("Boddy/Armature/AnimationPlayer").get_animation("Idle")
 onready var animt = get_node("Boddy/Armature/AnimationTree")
@@ -23,18 +27,32 @@ var Primary_rof = 0
 
 #movement function
 func _physics_process(_delta):
-	velocity += gravity
-	velocity = move_and_slide(velocity, Vector3.UP)
-	jump= false
-	velocity.x = 0
-	velocity.z = 0
-	velocity.x = Input.get_action_strength("ui_right") * speed - Input.get_action_strength("ui_left") * speed
-	velocity.z = Input.get_action_strength("ui_down") * speed - Input.get_action_strength("ui_up") * speed
-	velocity = velocity.rotated(Vector3.UP,deg2rad($Boddy.get_rotation_degrees().y))
-	if Input. is_action_just_pressed("jump"):
-		jump = true
-	if jump and is_on_floor():
-		velocity.y = jump_speed
+	Movement.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	Movement.z = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	#JacklRabbit from discord created the below line 
+	Movement = Movement.rotated(Vector3.UP,deg2rad($Boddy.get_rotation_degrees().y))
+	Movement = Movement.normalized()
+	
+	velocity.y -= gravity
+	
+	var temp_velocity = velocity
+	temp_velocity.y = 0
+	 
+	var moving = Movement * max_speed 
+	
+	var acceleration
+	if Movement.dot(temp_velocity) > 0:
+		acceleration = .2
+	else:
+		acceleration = .6
+	
+	temp_velocity = temp_velocity.linear_interpolate(moving, acceleration)
+	velocity.x = temp_velocity.x
+	velocity.z = temp_velocity.z
+	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
+	
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
+		velocity.y = jump_hight
 
 func _process(_delta):
 	#checks if varables change
