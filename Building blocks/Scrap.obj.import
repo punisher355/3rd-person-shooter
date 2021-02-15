@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Scrap.obj-2f2276ed70bfb7041896b7996a27613f.mesh"
+
+[deps]
+
+files=[ "res://.import/Scrap.obj-2f2276ed70bfb7041896b7996a27613f.mesh" ]
+
+source_file="res://Building blocks/Scrap.obj"
+dest_files=[ "res://.import/Scrap.obj-2f2276ed70bfb7041896b7996a27613f.mesh", "res://.import/Scrap.obj-2f2276ed70bfb7041896b7996a27613f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,257 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Building blocks/walls.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://Building blocks/Floor.meshlib" type="MeshLibrary" id=2]
+[ext_resource path="res://Game Rooms/Template of Dungeons/Rooms.gd" type="Script" id=3]
+
+[node name="Room" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Side" type="Spatial" parent="."]
+
+[node name="1" type="Spatial" parent="Side"]
+
+[node name="Floor" type="GridMap" parent="Side/1"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1441793, 65535, 0, 538312705, 0, 1, 1441793, 1, 1, 1441793, 65534, 1, 538312705, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 1441793, 65535, 65534, 1441793, 0, 65535, 1441793, 1, 65535, 1441793, 65534, 65535, 1441793, 65535, 65535, 1441793 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="Side/1"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 65533, 0, 538312709, 65534, 0, 538312709, 65533, 1, 538312709, 65534, 1, 1441797, 1, 2, 536870917, 65534, 2, 5, 0, 65533, 655365, 1, 65533, 655365, 65534, 65533, 537526277, 65535, 65533, 537526277, 0, 65534, 2, 65533, 65534, 1441797, 65533, 65535, 1441797, 65535, 65535, 536870914 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="0" type="Spatial" parent="Side"]
+
+[node name="Floor" type="GridMap" parent="Side/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1075183617, 65535, 0, 1441793, 0, 1, 1441793, 1, 1, -1072300031, 65534, 1, 1441793, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 538312705, 65535, 65534, 1441793, 0, 65535, 1441793, 1, 65535, 1441793, 65534, 65535, 1441793, 65535, 65535, 1441793 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="Side/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 1, 0, 1441797, 65533, 0, 1441797, 65534, 0, 538312709, 65535, 0, 538312707, 0, 1, 536870912, 1, 1, 655365, 2, 1, 1048581, 65533, 1, 538312709, 65534, 1, 538312704, 65535, 1, 536870916, 0, 65533, 537526277, 1, 65533, 537526277, 65534, 65533, 537526277, 65535, 65533, -1609957371, 1, 65534, 538312709, 65533, 65534, 538312709, 1, 65535, 537526272, 2, 65535, 537919493, 65533, 65535, 538312709, 65535, 65535, 537526277 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="LR" type="Spatial" parent="."]
+
+[node name="0" type="Spatial" parent="LR"]
+
+[node name="Floor" type="GridMap" parent="LR/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1441793, 65535, 0, 1441793, 0, 1, 1441793, 1, 1, 1441793, 65534, 1, 1441793, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 1441793, 65535, 65534, 1441793, 0, 65535, 538312705, 1, 65535, 1441793, 65534, 65535, 1441793, 65535, 65535, -1609170943 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="LR/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 1, 1, 655362, 2, 1, 1048581, 65533, 1, 1441797, 65534, 1, 537919490, 0, 2, 5, 1, 2, 5, 65534, 2, 5, 65535, 2, 5, 1, 65533, 655365, 65534, 65533, 655365, 0, 65534, 5, 1, 65534, 1441794, 2, 65534, 1048581, 65533, 65534, 1441797, 65534, 65534, 2, 65535, 65534, 5 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="LRB" type="Spatial" parent="."]
+
+[node name="0" type="Spatial" parent="LRB"]
+
+[node name="Floor" type="GridMap" parent="LRB/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1441793, 65535, 0, 1441793, 0, 1, 1075183617, 1, 1, 1441793, 65534, 1, -1609170943, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 1441793, 65535, 65534, 1441793, 0, 65535, 1441793, 1, 65535, 1441793, 65534, 65535, 1441793, 65535, 65535, -1609170943 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="LRB/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 5, 1, 0, 5, 65534, 0, 5, 65535, 0, 5, 0, 1, 538312709, 1, 1, 536870917, 2, 1, 537919493, 65533, 1, 538312709, 65534, 1, 536870917, 65535, 1, 537919493, 1, 2, 536870917, 65534, 2, 536870917, 0, 65533, 537526277, 1, 65533, 537526277, 65534, 65533, 537526277, 1, 65534, 537526277, 2, 65534, 537919493, 65533, 65534, 538312709, 65535, 65534, 536870917, 0, 65535, 5, 65534, 65535, 5, 65535, 65535, 5 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="1" type="Spatial" parent="LRB"]
+
+[node name="Floor" type="GridMap" parent="LRB/1"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 538312705, 65534, 0, 538312705, 65535, 0, 1441795, 0, 1, 1441793, 1, 1, -1609170943, 65534, 1, -1609170943, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 1441793, 65535, 65534, 1441793, 0, 65535, 1048579, 1, 65535, 1441793, 65534, 65535, 538312705, 65535, 65535, 1441793 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="LRB/1"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 1, 1, 537526274, 2, 1, 537919493, 65533, 1, 538312709, 65534, 1, 1048578, 1, 2, 5, 65534, 2, 5, 0, 65533, 655365, 1, 65533, 655365, 65534, 65533, 655365, 1, 65534, 1441794, 2, 65534, 537919493, 65533, 65534, -1609170939, 65534, 65534, 2, 65535, 65534, 536870917 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="LRT" type="Spatial" parent="."]
+
+[node name="0" type="Spatial" parent="LRT"]
+
+[node name="Floor" type="GridMap" parent="LRT/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1441793, 65535, 0, 1075183617, 0, 1, 538312705, 1, 1, 1441793, 65534, 1, 1441793, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 538312705, 65535, 65534, 1441793, 0, 65535, 1441793, 1, 65535, 1441793, 65534, 65535, 1441793, 65535, 65535, 1441793 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="LRT/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 1, 1048576, 1, 1, 5, 2, 1, 1048581, 65533, 1, 1441797, 65534, 1, 1441794, 0, 2, 5, 1, 2, 5, 65534, 2, 5, 65535, 2, 5, 1, 65533, 655365, 65534, 65533, 655365, 65535, 65533, 655361, 0, 65534, 1, 1, 65534, 655360, 2, 65534, 1048581, 65533, 65534, 1441797, 65534, 65534, 2 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="1" type="Spatial" parent="LRT"]
+
+[node name="Floor" type="GridMap" parent="LRT/1"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1441793, 65535, 0, 1441793, 0, 1, 1441793, 1, 1, 1441793, 65534, 1, 1441793, 65535, 1, 1441793, 0, 65534, 1441793, 1, 65534, 538312705, 65534, 65534, 1441793, 65535, 65534, 1441793, 0, 65535, 1441793, 1, 65535, 1441793, 65534, 65535, 538312705, 65535, 65535, 1441793 )
+}
+__meta__ = {
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="LRT/1"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 655360, 1, 0, 1048579, 2, 1, 1048581, 65533, 1, 1441797, 65534, 1, 0, 65535, 1, 1048581, 0, 2, 5, 1, 2, 5, 65534, 2, 5, 65535, 2, 5, 1, 65533, 655365, 65534, 65533, 655365, 0, 65534, 655362, 2, 65534, 1048581, 65533, 65534, 1441797, 65534, 65534, 1441792, 0, 65535, 1048581, 1, 65535, 2, 65534, 65535, 1441792 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="LRTB" type="Spatial" parent="."]
+
+[node name="0" type="Spatial" parent="LRTB"]
+
+[node name="Floor" type="GridMap" parent="LRTB/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 3.25, 0 )
+visible = false
+mesh_library = ExtResource( 2 )
+cell_size = Vector3( 1, 1.02, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 1441793, 1, 0, 1441793, 65534, 0, 1441793, 65535, 0, 1441793, 0, 1, -1072300031, 1, 1, 1441793, 65534, 1, 1441793, 65535, 1, 1075183617, 0, 65534, 1441793, 1, 65534, 1441793, 65534, 65534, 1441793, 65535, 65534, 1441793, 0, 65535, 1441793, 1, 65535, 1441793, 65534, 65535, 1441793, 65535, 65535, 1441793 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 1,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Walls" type="GridMap" parent="LRTB/0"]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 4, 0 )
+visible = false
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1, 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 655362, 65535, 0, 1048578, 1, 1, 2, 2, 1, 1048581, 65533, 1, 1441797, 65534, 1, 1441794, 1, 2, 5, 65534, 2, 5, 1, 65533, 655365, 65534, 65533, 655365, 1, 65534, 1048578, 2, 65534, 1048581, 65533, 65534, 1441797, 65534, 65534, 655362, 0, 65535, 1441794, 65535, 65535, 2 )
+}
+__meta__ = {
+"_edit_lock_": true,
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
